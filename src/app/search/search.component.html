@@ -1,0 +1,28 @@
+<form [formGroup]="form" (ngSubmit)="processForm()">
+    <table>
+        <tr>
+            <td>Search for Giphys:</td>
+            <td><input type="text" size="30" formControlName="q"></td>
+            <td>
+                <select name="limit" formControlName="limit">
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                </select>
+            </td>
+            <td><button type="submit">Search</button></td>
+            <td><button type="button">Clear</button></td>
+        </tr>
+    </table>
+</form>
+
+
+<h2>Images</h2>
+
+<div *ngFor="let g of dataArr">
+  <h2>{{ g.title }}</h2>
+  <a [href]="g.url">
+    <img [src]="g.imageUrl">
+  </a>
+</div>
